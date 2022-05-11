@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap");
 
 :root {
-  --primary: #fe2c55;
+  --primary: #f5aebc;
+  --black: #000;
+  --text-color: #333;
 }
 * {
   margin: 0;
@@ -17,4 +19,13 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+}
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+a[href] {
+  color: var(--text-color);
 }

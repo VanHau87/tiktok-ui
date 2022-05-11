@@ -1,6 +1,12 @@
 import React from "react";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleXmark,
+  faMagnifyingGlass,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -9,12 +15,23 @@ function Header() {
       <div className={cx("header__container")}>
         <div className={cx("header__logo")}>
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/800px-TikTok_logo.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
             className={cx("header__logoImg")}
           />
         </div>
-        <div className="header__search"></div>
-        <div className="header__icons"></div>
+        <div className={cx("header__search")}>
+          <input placeholder="Search accounts and videos" spellCheck={false} />
+          <div className={cx("header__searchBtns")}>
+            <button className={cx("clear-btn")}>
+              <FontAwesomeIcon icon={faCircleXmark} className={cx("")} />
+            </button>
+            <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
+            <button className={cx("search-btn")}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+          </div>
+        </div>
+        <div className="header__actions"></div>
       </div>
     </header>
   );
